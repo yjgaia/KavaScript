@@ -66,24 +66,44 @@ prototype based oop.
 ```
 KavaScript
 ```kavascript
-var Class = class {
-	private var firstName = 'Bob';
-	private var lastName = 'Doe';
+var Animal = class() {
+
+	pub bark = (sound) {
+		alert(sound);
+	};
+};
+
+var Man = class(firstName, lastName, age) extend Animal() {
+	
+	// private
+	var name = firstName + ' ' + lastName;
     
-    public var talk = (message) {
-    	...
+    // protected
+    pro introduce = () {
+    	console.log('My name is ${name}, I\'m ${age} years old.');
+    };
+    
+    // public
+    pub talk = (message) {
+    	bark(message);
     }
 };
+
+var John = class() extend Man(24) {
+
+	introduce();
+};
+
+var john = new John();
+john.talk('Hello, I\'m John!');
 ```
 
 ### function
-JavaScript
 ```javascript
 var f = function(a, b, c) {
 	...
 };
 ```
-KavaScript
 ```kavascript
 var f = (a, b, c) {
 	...
