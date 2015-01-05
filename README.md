@@ -2,9 +2,11 @@
 KavaScript is superset of JavaScript.
 
 ### Multi-line Text
+JavaScript
 ```javascript
 var multiline = 'This\nis\nmulti-line\ntext.';
 ```
+KavaScript
 ```kavascript
 var multiline = 'This
 is
@@ -13,48 +15,56 @@ text.';
 ```
 
 ### Callback Hell
+JavaScript
 ```javascript
-var x = function() {
+get(function(data) {
 
-	get(function(data) {
-    
-		find({
-			name : data.name
-		}, function(result) {
-			...
-		});
-        
-        find({
-			age : data.age
+	find({
+		name : data.name
+	}, function(result) {
+		
+		update({
+			name : 'John'
 		}, function(result) {
 			...
 		});
 	});
-};
+    
+    find({
+		age : data.age
+	}, function(result) {
+		...
+	});
+});
 ```
+KavaScript
 ```kavascript
-var x = function() {
+var data = get(<-);
 
-	var data = get(<-);
-    
-    var result = find({
-        name : data.name
-    }, <-);
-    ...
-    ---
-    
-    result = find({
-        age : data.age
-    }, <-);
-    ...
-    ---
-};
+var result = find({
+    name : data.name
+}, <-);
+
+update({
+	name : 'John'
+}, <-);
+...
+---
+---
+
+result = find({
+    age : data.age
+}, <-);
+...
+---
 ```
 
 ### OOP
+JavaScript
 ```javascript
 prototype based oop.
 ```
+KavaScript
 ```kavascript
 var Class = class {
 	private var firstName = 'Bob';
@@ -67,11 +77,13 @@ var Class = class {
 ```
 
 ### function
+JavaScript
 ```javascript
 var f = function(a, b, c) {
 	...
 };
 ```
+KavaScript
 ```kavascript
 var f = (a, b, c) {
 	...
