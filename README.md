@@ -89,8 +89,9 @@ var Man = class(firstName, lastName, age) extend Animal() {
     }
 };
 
-var John = class() extend Man(24) {
+var John = class() extend Man('John', 'Smith', 24) {
 
+	// my name is John Smith, I'm 24 years old.
 	introduce();
 };
 
